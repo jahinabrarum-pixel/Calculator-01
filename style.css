@@ -104,16 +104,4 @@ button:active {
     font-weight: 600;
 }
 
-/* 📱 Responsive (small phone) */
-@media (max-width: 400px) {
-    button {
-        width: 55px;
-        height: 55px;
-        font-size: 18px;
-        margin: 6px;
-    }
 
-    input {
-        font-size: 32px;
-    }
-}
