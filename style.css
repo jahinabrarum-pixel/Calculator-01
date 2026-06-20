@@ -8,14 +8,20 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
     width: 100%;
-    min-height: 100vh; /* 🔥 better than height */
+    min-height: 100vh; /* 🔥 IMPORTANT */
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, #0a0a0a, #3a4452);
     padding: 10px;
+    touch-action: manipulation;
 }
 
 /* 📱 Calculator Container */
