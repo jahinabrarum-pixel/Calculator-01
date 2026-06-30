@@ -99,3 +99,12 @@ document.addEventListener("keydown", (e) => {
     playClick();
   }
 });
+
+// Vibration
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    if (navigator.vibrate) {
+      navigator.vibrate(30); // 30ms vibration
+    }
+  });
+});

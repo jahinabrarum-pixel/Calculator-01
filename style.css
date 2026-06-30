@@ -1,73 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh; /* 🔥 IMPORTANT */
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, #0a0a0a, #3a4452);
+    padding: 10px;
+    touch-action: manipulation;
 }
 
+/* 📱 Calculator Container */
 .calculator {
+    width: 100%;
+    max-width: 350px;
     border: 1px solid #717377;
     padding: 20px;
     border-radius: 16px;
-    background: transparent;
-    box-shadow: 0px 3px 15px rgba(113, 115, 119, 0.5);
-
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px); /* 🔥 glass feel */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.6);
 }
 
+/* 🔥 Display */
 input {
     width: 100%;
-    max-width: 320px;
     border: none;
     outline: none;
-    padding: 24px 16px;
-    margin-bottom: 20px;
-    font-size: 42px;
+    padding: 20px 15px;
+    margin-bottom: 15px;
+    font-size: 40px;
     font-weight: 600;
     text-align: right;
     color: #ffffff;
     letter-spacing: 1px;
 
-    /* --- অ্যাডভান্সড বক্স শ্যাডো ও ব্যাকগ্রাউন্ড --- */
-    background: rgba(0, 0, 0, 0.2);
-    /* ডিসপ্লের ব্যাকগ্রাউন্ড কিছুটা ডার্ক করা হয়েছে */
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
-    /* ডিসপ্লেতে হালকা রাউন্ড শেপ */
 
-    /* ইনার শ্যাডো এবং আউটার গ্লো এর কম্বিনেশন */
-    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.5),
-        inset 0px -1px 1px rgba(255, 255, 255, 0.1),
-        0px 1px 1px rgba(255, 255, 255, 0.05);
+    box-shadow: 
+        inset 0px 4px 8px rgba(0, 0, 0, 0.6),
+        inset 0px -1px 1px rgba(255, 255, 255, 0.08);
+    
+    user-select: none; /* 🔥 no text select */
 }
 
+/* 🔘 Buttons Grid Fix (IMPORTANT) */
+.calculator div {
+    display: flex;
+    justify-content: center;
+}
+
+/* 🔘 Buttons */
 button {
     border: none;
     outline: none;
-    width: 60px;
-    height: 60px;
-    margin: 10px;
+    width: 65px;
+    height: 65px;
+    margin: 8px;
     border-radius: 50%;
-    background: transparent;
+    background: rgba(255,255,255,0.05);
     color: #ffffff;
     font-size: 20px;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
     cursor: pointer;
+    touch-action: manipulation;
+
+    /* 🔥 Depth Effect */
+    box-shadow: 
+        -4px -4px 10px rgba(255, 255, 255, 0.05),
+        4px 4px 10px rgba(0, 0, 0, 0.6);
+
+    transition: all 0.15s ease;
 }
 
+/* 👆 Hover (PC only feel) */
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* 👇 Press Effect */
+button:active {
+    transform: scale(0.9);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* 🎯 Equal Button */
 .equalBtn {
-    background-color: #fb7c14;
+    background: linear-gradient(135deg, #fb7c14, #ff9a3c);
+    box-shadow: 0 0 10px rgba(251, 124, 20, 0.7);
 }
 
+/* 🟢 Operators */
 .operator {
     color: #6dee0a;
+    font-weight: 600;
 }
+
+
